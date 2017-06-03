@@ -1,28 +1,54 @@
-run:
-- `npm run dev` for development
-- `npm run build` for production build
+Development
 
-todo: 
-* js chunks don't go to ./dist/js
-* sass doesn't compile
-* add sourcemaps to sass compilation
-* add postcss/autoprefixer to sass compilation (only evergreen browser support)
+- `npm run dev` for development with webpack dev-server and hot module replacement
+- `npm run build` for optimized production build
 
-planned folder mapping:
+#### Folder Structure
 
-#### html:
-- src/index.html => dist/index.html
-- src/templates/portfolio.html => dist/portfolio/portfolio.html
 
-#### js:
-- src/js/*.js => dist/js/..
+##### src
 
-#### styles:
-- src/styles/*.sass => dist/css/..
+```
+└───src
+    ├───<assets>
+    │   ├───<images>  // all images
+    │   └───<misc> 	  // manifest.json and robots.txt
+    ├───<js>
+   	├───<styles>
+    │    ├───<portfolio> 	// SASS for portfolio page
+    │    ├───<landingPage>  // SASS for landing page
+   	│	 └────app.sass 	    // SASS for global    
+    │
+    ├───<templates> 
+    │    └────portfolio-item.html // Portfolio Page
+    │ 
+    ├───index.html // Landing Page 
+    
+ ```
+ ##### dist
+ 
+ ```
+└───dist
+	├───<css>	 // Compiled css
+    ├───<images> // Images
+    ├───<js>     // JS Bundles
+    │
+    ├───<portfolio> 
+    │    └────portfolio-item.html // Portfolio Page
+    │ 
+    ├───index.html // Landing Page
+    │
+    ├───robots.txt
+    ├───manifest.json
+    
+ ```
 
-#### images etc.
-- src/assets/images => dist/images
 
-#### misc.
-- src/misc/robots.txt && src/misc/manifest.json => dist/
+##### Current webpack issues:
+
+* JavaScript code splitting works but all bundles go to `dist/` folder. They need to go to `/dist/js` and `html` files need to import them from this absolute path.
+* SASS doesn't compile unless it's imported via a JavaScript file. It'd be better if all SASS files get auto-compiled.
+* Sourcemaps needs to be added to `babel` and SASS compilation.
+* Postcss/autoprefixer needs to be added to SASS compilation. (We'll only support evergreen browsers)
+* All files needs to be transferred from `src/` to `dist/` based on folder structure.
 
