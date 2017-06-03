@@ -14,15 +14,15 @@ Development
     │   ├───<images>  // all images
     │   └───<misc> 	  // manifest.json and robots.txt
     ├───<js>
-   	├───<styles>
+    ├───<styles>
     │    ├───<portfolio> 	// SASS for portfolio page
     │    ├───<landingPage>  // SASS for landing page
-   	│	 └────app.sass 	    // SASS for global    
+    │    └────app.sass 	    // SASS for global    
     │
     ├───<templates> 
     │    └────portfolio-item.html // Portfolio Page
     │ 
-    ├───index.html // Landing Page 
+    └───index.html // Landing Page 
     
  ```
  ##### dist
@@ -39,7 +39,7 @@ Development
     ├───index.html // Landing Page
     │
     ├───robots.txt
-    ├───manifest.json
+    └───manifest.json
     
  ```
 
