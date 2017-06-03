@@ -11,13 +11,13 @@ Development
 ```
 └───src
     ├───<assets>
-    │   ├───<images>  // all images
+    │   ├───<images>      // all images
     │   └───<misc> 	  // manifest.json and robots.txt
     ├───<js>
     ├───<styles>
     │    ├───<portfolio> 	// SASS for portfolio page
-    │    ├───<landingPage>  // SASS for landing page
-    │    └────app.sass 	    // SASS for global    
+    │    ├───<landingPage>      // SASS for landing page
+    │    └────app.sass 	        // SASS for global    
     │
     ├───<templates> 
     │    └────portfolio-item.html // Portfolio Page
@@ -29,9 +29,9 @@ Development
  
  ```
 └───dist
-	├───<css>	 // Compiled css
-    ├───<images> // Images
-    ├───<js>     // JS Bundles
+	├───<css>	  // Compiled css
+    ├───<images>   // Images
+    ├───<js>       // JS Bundles
     │
     ├───<portfolio> 
     │    └────portfolio-item.html // Portfolio Page

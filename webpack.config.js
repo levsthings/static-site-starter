@@ -11,7 +11,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const cssDev = ['style-loader', 'css-loader', 'sass-loader']
 const cssProd = ExtractTextPlugin.extract({
     use: ['css-loader', 'sass-loader'],
-    fallback: 'style-loader',
+    fallback: 'style-loader'
 })
 const cssConfig = isProd ? cssProd : cssDev
 
@@ -20,17 +20,17 @@ module.exports = {
     entry: {
         app: './src/js/app.js',
         portfolio: './src/js/portfolio.js',
-        landingPage: './src/js/landingPage.js',
+        landingPage: './src/js/landingPage.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js',
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [
             {
                 test: /\.html$/,
-                loader: 'raw-loader',
+                loader: 'raw-loader'
             },
             {
                 test: /\.sass$/,
@@ -46,7 +46,7 @@ module.exports = {
                 use: [
                     'file-loader?name=[hash:10].[ext]&publicPath=images/&outputPath=images/',
                     'image-webpack-loader'
-                    ]
+                ]
             }
         ]
     },
