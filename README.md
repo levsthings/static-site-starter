@@ -3,10 +3,10 @@ run:
 - `npm run build` for production build
 
 todo: 
-- [] js chunks don't go to ./dist/js
-- [] sass doesn't compile
-- [] add sourcemaps to sass compilation
-- [] add postcss/autoprefixer to sass compilation (only evergreen browser support)
+* [] js chunks don't go to ./dist/js
+* [] sass doesn't compile
+* [] add sourcemaps to sass compilation
+* [] add postcss/autoprefixer to sass compilation (only evergreen browser support)
 
 planned folder mapping:
 
