@@ -9,9 +9,9 @@ const glob = require('glob');
 
 
 const isProd = process.env.NODE_ENV === 'production';
-const cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+const cssDev = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'];
 const cssProd = ExtractTextPlugin.extract({
-    use: ['css-loader', 'sass-loader'],
+    use: ['css-loader', 'postcss-loader','sass-loader'],
     fallback: 'style-loader'
 })
 const cssConfig = isProd ? cssProd : cssDev;
