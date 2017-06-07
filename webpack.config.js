@@ -18,6 +18,8 @@ const cssConfig = isProd ? cssProd : cssDev;
 
 
 module.exports = {
+
+    devtool: 'cheap-module-source-map',
     entry: {
         app: [
             './src/js/app.js',
