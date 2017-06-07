@@ -1,19 +1,20 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const PurifyCSSPlugin = require('purifycss-webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const webpack = require('webpack')
-const path = require('path')
-const glob = require('glob')
+const webpack = require('webpack');
+const path = require('path');
+const glob = require('glob');
 
 
-const isProd = process.env.NODE_ENV === 'production'
-// const cssDev = ['style-loader', 'css-loader', 'sass-loader']
-// const cssProd = ExtractTextPlugin.extract({
-//     use: ['css-loader', 'sass-loader'],
-//     fallback: 'style-loader'
-// })
-// const cssConfig = isProd ? cssProd : cssDev
+const isProd = process.env.NODE_ENV === 'production';
+const cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+const cssProd = ExtractTextPlugin.extract({
+    use: ['css-loader', 'sass-loader'],
+    fallback: 'style-loader'
+})
+const cssConfig = isProd ? cssProd : cssDev;
 
 
 module.exports = {
@@ -33,13 +34,9 @@ module.exports = {
                 test: /\.html$/,
                 loader: 'html-loader'
             },
-            //  {
-            //     test: /\.sass$/,
-            //     use: cssConfig
-            // },
-            {
+             {
                 test: /\.sass$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                use: cssConfig
             },
             {
                 test: /\.js$/,
@@ -77,6 +74,9 @@ module.exports = {
         open: true
     },
     plugins: [
+        new CopyWebpackPlugin([
+            {from: 'src/assets', to: 'assets'}
+        ]),
         new HtmlWebpackPlugin({
             title: 'Landing Page',
             hash: true,
@@ -105,7 +105,7 @@ module.exports = {
 
         new ExtractTextPlugin({
             filename: 'css/[name].bundle.css',
-            // disable: !isProd,
+            disable: !isProd,
             allChunks: true
         }),
 
