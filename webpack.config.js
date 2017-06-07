@@ -19,10 +19,12 @@ const cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
     entry: {
-        app: './src/js/app.js',
+        app: [
+            './src/js/app.js',
+            './src/styles/app.sass'
+        ],
         portfolio: './src/js/portfolio.js',
-        landingPage: './src/js/landingPage.js',
-        sass: './src/styles/app.sass'
+        landingPage: './src/js/landingPage.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
