@@ -1,23 +1,23 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const webpack = require('webpack');
-const path = require('path');
-const glob = require('glob');
+const webpack = require('webpack')
+const path = require('path')
+const glob = require('glob')
 
-
-const isProd = process.env.NODE_ENV === 'production';
-const cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+const isProd = process.env.NODE_ENV === 'production'
+const cssDev = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 const cssProd = ExtractTextPlugin.extract({
-    use: ['css-loader', 'sass-loader'],
+    use: ['css-loader', 'postcss-loader', 'sass-loader'],
     fallback: 'style-loader'
 })
-const cssConfig = isProd ? cssProd : cssDev;
-
+const cssConfig = isProd ? cssProd : cssDev
 
 module.exports = {
+
+    devtool: 'cheap-module-source-map',
     entry: {
         app: [
             './src/js/app.js',
@@ -36,7 +36,7 @@ module.exports = {
                 test: /\.html$/,
                 loader: 'html-loader'
             },
-             {
+            {
                 test: /\.sass$/,
                 use: cssConfig
             },
@@ -45,22 +45,30 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'babel-loader'
             },
-            // {
-            //     test: /\.(png|svg|jpg?g|gif)$/,
-            //     use: [
-            //         'file-loader?name=[hash:10].[ext]&publicPath=images/&outputPath=images/',
-            //         'image-webpack-loader'
-            //     ]
-            // }
             {
-                test: /\.(png|svg|jpg?g|gif)$/,
+                test: /\.(png|svg|jpg|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: 'images/',
-                            publicPath: 'images/'
+                            outputPath: 'images/'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        query: {
+                            progressive: true,
+                            optimizationLevel: 7,
+                            interlaced: false,
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            }
+                            //  add other options here for jpg etc like example below
+                            //  mozjpeg: {
+                            //     quality: 65
+                            // }
                         }
                     }
                 ]
@@ -71,6 +79,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         hot: true,
+        inline: true,
         port: 3000,
         stats: 'errors-only',
         open: true
@@ -104,13 +113,11 @@ module.exports = {
             filename: 'portfolio/portfolio-item.html',
             template: './src/templates/portfolio-item.html'
         }),
-
         new ExtractTextPlugin({
             filename: 'css/[name].bundle.css',
             disable: !isProd,
             allChunks: true
         }),
-
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'src/*.html'))
         }),
