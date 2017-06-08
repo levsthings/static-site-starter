@@ -15,7 +15,6 @@ const cssProd = ExtractTextPlugin.extract({
 })
 const cssConfig = isProd ? cssProd : cssDev
 
-
 module.exports = {
 
     devtool: 'cheap-module-source-map',
@@ -46,13 +45,6 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'babel-loader'
             },
-            // {
-            //     test: /\.(png|svg|jpg?g|gif)$/,
-            //     use: [
-            //         'file-loader?name=[hash:10].[ext]&publicPath=images/&outputPath=images/',
-            //         'image-webpack-loader'
-            //     ]
-            // }
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
@@ -61,7 +53,6 @@ module.exports = {
                         options: {
                             name: '[name].[ext]',
                             outputPath: 'images/'
-                            // publicPath: 'images/'
                         }
                     },
                     {
@@ -77,7 +68,7 @@ module.exports = {
                             //  add other options here for jpg etc like example below
                             //  mozjpeg: {
                             //     quality: 65
-                            // } 
+                            // }
                         }
                     }
                 ]
@@ -122,13 +113,11 @@ module.exports = {
             filename: 'portfolio/portfolio-item.html',
             template: './src/templates/portfolio-item.html'
         }),
-
         new ExtractTextPlugin({
             filename: 'css/[name].bundle.css',
             disable: !isProd,
             allChunks: true
         }),
-
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'src/*.html'))
         }),

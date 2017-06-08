@@ -42,13 +42,3 @@ Development
     └───manifest.json
     
  ```
-
-
-##### Current webpack issues:
-
-* JavaScript code splitting works but all bundles go to `dist/` folder. They need to go to `/dist/js` and `html` files need to import them from this absolute path.
-* SASS doesn't compile unless it's imported via a JavaScript file. It'd be better if all SASS files get auto-compiled.
-* Sourcemaps needs to be added to `babel` and SASS compilation.
-* Postcss/autoprefixer needs to be added to SASS compilation. (We'll only support evergreen browsers)
-* All files needs to be transferred from `src/` to `dist/` based on folder structure.
-

@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "browserlist": [
-    "> 1%",
     "last 2 versions"
   ],
-  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -34,7 +32,8 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "npm run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack -p --progress --hide-modules",
-    "clean": "rimraf ./dist/*"
+    "clean": "rimraf ./dist/*",
+    "fix": "eslint --fix . --ext .js src"
   },
   "author": "levsthings",
   "license": "ISC"
