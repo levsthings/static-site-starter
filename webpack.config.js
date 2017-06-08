@@ -1,20 +1,19 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const webpack = require('webpack');
-const path = require('path');
-const glob = require('glob');
+const webpack = require('webpack')
+const path = require('path')
+const glob = require('glob')
 
-
-const isProd = process.env.NODE_ENV === 'production';
-const cssDev = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'];
+const isProd = process.env.NODE_ENV === 'production'
+const cssDev = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 const cssProd = ExtractTextPlugin.extract({
-    use: ['css-loader', 'postcss-loader','sass-loader'],
+    use: ['css-loader', 'postcss-loader', 'sass-loader'],
     fallback: 'style-loader'
 })
-const cssConfig = isProd ? cssProd : cssDev;
+const cssConfig = isProd ? cssProd : cssDev
 
 
 module.exports = {
@@ -38,7 +37,7 @@ module.exports = {
                 test: /\.html$/,
                 loader: 'html-loader'
             },
-             {
+            {
                 test: /\.sass$/,
                 use: cssConfig
             },
