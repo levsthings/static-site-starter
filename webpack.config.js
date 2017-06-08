@@ -87,6 +87,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
         hot: true,
+        inline: true,
         port: 3000,
         stats: 'errors-only',
         open: true
