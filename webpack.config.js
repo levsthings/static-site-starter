@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const PurifyCSSPlugin = require('purifycss-webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const VisualizerPlugin = require('webpack-visualizer-plugin')
 
 const webpack = require('webpack')
 const path = require('path')
@@ -10,14 +12,28 @@ const glob = require('glob')
 const isProd = process.env.NODE_ENV === 'production'
 const cssDev = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 const cssProd = ExtractTextPlugin.extract({
-    use: ['css-loader', 'postcss-loader', 'sass-loader'],
+    use: [
+        {
+            loader: 'css-loader',
+            options: {
+                minimize: true
+            }
+        },
+        {
+            loader: 'postcss-loader'
+        },
+        {
+            loader: 'sass-loader'
+        }
+    ],
     fallback: 'style-loader'
 })
 const cssConfig = isProd ? cssProd : cssDev
+const uglifyJs = isProd ? new UglifyJSPlugin() : undefined
 
 module.exports = {
 
-    devtool: 'cheap-module-source-map',
+    devtool: isProd ? 'cheap-module-source-map' : undefined,
     entry: {
         app: [
             './src/js/app.js',
@@ -122,6 +138,10 @@ module.exports = {
             paths: glob.sync(path.join(__dirname, 'src/*.html'))
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new VisualizerPlugin({
+            filename: '../bundleVisualizer.html'
+        }),
+        uglifyJs
     ]
 }

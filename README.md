@@ -1,7 +1,11 @@
+Todos: 
+- Make sure that UglifyJS works as intended (with babel)
+- Add .ejs support for templating
+
 Development
 
-- `npm run dev` for development with webpack dev-server and hot module replacement
-- `npm run build` for optimized production build
+- `yarn dev` for development with webpack dev-server and hot module replacement
+- `yarn build` for optimized production build
 
 #### Folder Structure
 

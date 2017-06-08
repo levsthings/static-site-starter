@@ -1,5 +1,5 @@
 {
-  "name": "monolambda-web",
+  "name": "monolambda-static-site-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -26,12 +26,14 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
+    "uglifyjs-webpack-plugin": "^0.4.3",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "npm run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack -p --progress --hide-modules",
+    "build": "yarn run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack --progress --hide-modules",
     "clean": "rimraf ./dist/*",
     "fix": "eslint --fix . --ext .js src"
   },
