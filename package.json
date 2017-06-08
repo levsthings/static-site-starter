@@ -30,7 +30,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "npm run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack -p",
+    "build": "npm run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack -p --progress --hide-modules",
     "clean": "rimraf ./dist/*"
   },
   "author": "levsthings",
