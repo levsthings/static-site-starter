@@ -1,7 +1,25 @@
-$font-stack:    Helvetica, sans-serif
-$primary-color: red
+@import 'base/normalize'
+@import '../base/variables'
 
 body
-  font: 100% $font-stack
-  background-color: tomato
+  font: 100% $font-text
+  background-color: $green
   display: flex
+  justify-content: center
+
+header
+  display: flex
+  align-content: center
+  height: 45vh
+  width: 100%
+  background-color: purple  
+  .header-div
+    background-color: $white
+    flex-grow: 1
+    text-align: center
+    align-self: center
+
+h1
+  font:
+    family: $font-title
+    size: 2.5rem
