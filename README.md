@@ -19,7 +19,7 @@ Development
     │   └───<misc> 	  // manifest.json and robots.txt
     ├───<js>
     ├───<styles>
-    │    ├───<portfolio> 	// SASS for portfolio page
+    │    ├───<anotherPage> 	// SASS for another page
     │    ├───<landingPage>      // SASS for landing page
     │    └────app.sass 	        // SASS for global    
     │
@@ -37,8 +37,8 @@ Development
     ├───<images>   // Images
     ├───<js>       // JS Bundles
     │
-    ├───<portfolio> 
-    │    └────portfolio-item.html // Portfolio Page
+    ├───<anotherPage> 
+    │    └────another-page.html // Another Page
     │ 
     ├───index.html // Landing Page
     │
