@@ -3,21 +3,23 @@
 
 body
   font: 100% $font-text
-  background-color: $green
+  background-color: $white
   display: flex
   justify-content: center
 
 header
   display: flex
-  align-content: center
-  height: 45vh
+  justify-content: center
+  height: 65vh
   width: 100%
-  background-color: purple  
+  background: linear-gradient(45deg, rgba($green, 0.4), rgba($white, 0.3)),
+  url('./../assets/images/header-background.jpg') 
   .header-div
     background-color: $white
-    flex-grow: 1
     text-align: center
     align-self: center
+    padding: 2rem
+    border-radius: 1rem
 
 h1
   font:
