@@ -6,6 +6,7 @@ Todos:
 
 - Run `yarn dev` for development with webpack dev-server and hot module replacement
 - Run `yarn build` for optimized production build
+- Run `yarn serve` to build and serve the built assets to view things as a user
 
 #### Goals:
 

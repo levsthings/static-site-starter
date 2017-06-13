@@ -13,6 +13,7 @@
     "dev": "webpack-dev-server --progress",
     "build": "yarn run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack --config webpack.config.prod.js --progress --hide-modules",
     "clean": "rimraf ./dist/*",
+    "serve": "yarn run build && static dist",
     "lint": "eslint --fix ./src/ --color",
     "precommit": "lint-staged"
   },
@@ -48,5 +49,8 @@
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
     "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "dependencies": {
+    "node-static": "^0.7.9"
   }
 }
