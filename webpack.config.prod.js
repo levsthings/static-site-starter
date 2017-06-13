@@ -1,12 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const VisualizerPlugin = require('webpack-visualizer-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const webpack = require('webpack')
 const path = require('path')
+const glob = require('glob')
 
 module.exports = {
-
-    devtool: 'cheap-module-source-map',
     entry: {
         app: [
             './src/js/app.js',
@@ -27,27 +29,27 @@ module.exports = {
             },
             {
                 test: /\.sass$/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                        options: {
-                            sourceMap: true
+                use: ExtractTextPlugin.extract({
+                    use: [
+                        {
+                            loader: 'css-loader'
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: [
+                                    require('autoprefixer')({
+                                        browsers: ['last 2 versions']
+                                    })
+                                ]
+                            }
+                        },
+                        {
+                            loader: 'sass-loader'
                         }
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 2,
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    }
-                ]
+                    ],
+                    fallback: 'style-loader'
+                })
             },
             {
                 test: /\.js$/,
@@ -84,16 +86,10 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        hot: true,
-        inline: true,
-        port: 3000,
-        stats: 'errors-only',
-        open: true
-    },
     plugins: [
+        new CopyWebpackPlugin([
+            { from: 'src/assets', to: 'assets' }
+        ]),
         new HtmlWebpackPlugin({
             title: 'Landing Page',
             hash: true,
@@ -120,10 +116,15 @@ module.exports = {
             filename: 'another-page/another-page.html',
             template: './src/templates/another-page.ejs'
         }),
+        new ExtractTextPlugin({
+            filename: 'css/[name].bundle.css',
+            allChunks: true
+        }),
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, 'src/*.html'))
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new VisualizerPlugin({
-            filename: '../bundleVisualizer.html'
-        })
+        new UglifyJSPlugin()
     ]
 }
