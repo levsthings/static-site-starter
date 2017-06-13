@@ -1,12 +1,12 @@
 {
-  "name": "monolambda-static-site-starter",
-  "description": "boilerplate for static sites",
+  "name": "static-site-starter",
+  "description": "monolambda boilerplate for static sites",
   "version": "1.0.0",
   "author": "levsthings",
   "license": "Unlicense",
   "repository": {
     "type": "git",
-    "url": "https://github.com/monolambda//monolambda-static-site-starter"
+    "url": "https://github.com/monolambda/static-site-starter"
   },
   "main": "index.js",
   "scripts": {
