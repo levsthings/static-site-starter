@@ -69,12 +69,14 @@ module.exports = {
                         options: {
                             progressive: true,
                             optipng: {
-                                optimizationLevel: 7
+                                optimizationLevel: 7,
+                                interlaced: false
                             },
                             mozjpeg: {
                                 quality: 659
                             },
                             gifsicle: {
+                                optimizationLevel: 7,
                                 interlaced: false
                             },
                             pngquant: {
