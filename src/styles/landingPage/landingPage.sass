@@ -5,14 +5,13 @@ body
   font: 100% $font-text
   background-color: $white
   display: flex
-  justify-content: center
 
 header
   display: flex
   justify-content: center
   height: 65vh
   width: 100%
-  background: linear-gradient(45deg, rgba($green, 0.4), rgba($white, 0.3)),
+  background: linear-gradient(45deg, rgba($green, 0.2), rgba($white, 0.3)),
   url('./../assets/images/header-background.jpg') 
   .header-div
     background-color: $white
@@ -22,6 +21,8 @@ header
     border-radius: 1rem
 
 h1
+  color: darken($green, 15%)
   font:
-    family: $font-title
+    family: $font-text
     size: 2.5rem
+    weight: 500
