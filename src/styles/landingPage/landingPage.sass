@@ -1,28 +1,52 @@
 @import 'base/normalize'
 @import '../base/variables'
-
-body
-  font: 100% $font-text
-  background-color: $white
-  display: flex
+@import '../base/elements'
 
 header
   display: flex
   justify-content: center
-  height: 65vh
-  width: 100%
-  background: linear-gradient(45deg, rgba($green, 0.2), rgba($white, 0.3)),
-  url('./../assets/images/nico.gif') 
+  height: 45vh
+  background: linear-gradient(45deg, rgba(darken($green, 25%), 0.3), rgba($white, 0.5)),
+  url('./../assets/images/header-background.jpg') 
+  border:
+    bottom-left-radius: 3%
+    bottom-right-radius: 3%
+    top: .7rem solid lighten($gray, 15%)
   .header-div
+    width: 35%
     background-color: $white
     text-align: center
     align-self: center
-    padding: 2rem
+    padding: 1rem
     border-radius: 1rem
 
-h1
-  color: darken($green, 15%)
-  font:
-    family: $font-text
-    size: 2.5rem
-    weight: 500
+.intro
+  display: flex
+  justify-content: center
+  width: 100%
+  .quote
+    width: 30%
+    text-align: center
+    align-self: center
+    line-height: 1.2
+  .get-started-btn
+    display: inline-flex
+    justify-content: center
+    color: $white
+    background-color: darken($green, 10%)
+    font:
+      size: 1.3rem
+      weight: 500
+    padding: .6rem
+    border-radius: 2px
+    width: 10rem
+    box-shadow: 0 3px 5px 0 darken($white, 26%)
+    transition: background-color 0.5s ease
+    &:hover
+      background-color: darken($green, 13%)
+
+.about
+  height: 35.9vh
+  border:
+    top-left-radius: 3%
+    top-right-radius: 3%
