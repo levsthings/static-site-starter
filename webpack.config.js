@@ -65,25 +65,7 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            progressive: true,
-                            optipng: {
-                                optimizationLevel: 7,
-                                interlaced: false
-                            },
-                            mozjpeg: {
-                                quality: 659
-                            },
-                            gifsicle: {
-                                optimizationLevel: 7,
-                                interlaced: false
-                            },
-                            pngquant: {
-                                quality: '65-90',
-                                speed: 4
-                            }
-                        }
+                        loader: 'image-webpack-loader'
                     }
                 ]
             }
