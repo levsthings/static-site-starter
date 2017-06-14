@@ -68,18 +68,23 @@ module.exports = {
                     },
                     {
                         loader: 'image-webpack-loader',
-                        query: {
+                        options: {
                             progressive: true,
-                            optimizationLevel: 7,
-                            interlaced: false,
+                            optipng: {
+                                optimizationLevel: 7,
+                                interlaced: false
+                            },
+                            mozjpeg: {
+                                quality: 659
+                            },
+                            gifsicle: {
+                                optimizationLevel: 7,
+                                interlaced: false
+                            },
                             pngquant: {
                                 quality: '65-90',
                                 speed: 4
                             }
-                            //  add other options here for jpg etc like example below
-                            //  mozjpeg: {
-                            //     quality: 65
-                            // }
                         }
                     }
                 ]
