@@ -13,7 +13,7 @@
     "dev": "webpack-dev-server --progress",
     "build": "yarn run clean && export NODE_ENV=production || SET \"NODE_ENV=production\" && webpack --config webpack.config.prod.js --progress --hide-modules",
     "clean": "rimraf ./dist/*",
-    "serve": "yarn run build && static dist",
+    "serve": "yarn build && static dist",
     "lint": "eslint --fix ./src/ --color",
     "precommit": "lint-staged"
   },
