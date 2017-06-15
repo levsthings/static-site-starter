@@ -39,9 +39,8 @@
     "image-webpack-loader": "^3.3.1",
     "lint-staged": "^3.6.1",
     "node-sass": "^4.5.3",
+    "node-static": "^0.7.9",
     "postcss-loader": "^2.0.5",
-    "purify-css": "^1.2.5",
-    "purifycss-webpack": "^0.7.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
@@ -49,8 +48,5 @@
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
     "webpack-visualizer-plugin": "^0.1.11"
-  },
-  "dependencies": {
-    "node-static": "^0.7.9"
   }
 }
