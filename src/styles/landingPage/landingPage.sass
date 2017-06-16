@@ -1,25 +1,22 @@
-@import '../base/variables'
-@import '../base/elements'
-
 header
     display: flex
     justify-content: center
     height: 45vh
     background: linear-gradient(45deg, rgba(darken($green, 25%), 0.3), rgba($white, 0.5)),
-    url('./../assets/images/header-background.jpg') 
+    url('~/assets/images/header-background.jpg') 
     border:
         bottom-left-radius: 3%
         bottom-right-radius: 3%
-        top: .7rem solid lighten($gray, 15%)
-    box-shadow: 0 3px 5px 0 darken($white, 26%)
+    box-shadow: 0 3px 7px 0 lighten($bg-shadow, 15%)
     .header-div
         width: 35%
         background-color: $white
+        opacity: 0.9
         text-align: center
         align-self: center
         padding: 1rem
         border-radius: 1rem
-        box-shadow: 0 2px 8px 0 $eden
+        box-shadow: 0 4px 8px 0 darken($bg-box, 5%)
 
 .intro
     display: flex
@@ -35,17 +32,17 @@ header
         display: inline-flex
         justify-content: center
         color: $white
-        background-color: $persian-red
+        background-color: $btn-accent
         font:
           size: 1.5rem
           weight: 500
         padding: 1rem
         border-radius: 5px
         width: 10rem
-        box-shadow: 0 3px 5px 0 darken($white, 26%)
+        box-shadow: 0 2px 5px 0 lighten($bg-shadow, 10%)
         transition: background-color 0.5s ease
         &:hover
-          background-color: lighten($persian-red, 7%)
+          background-color: lighten($btn-accent, 7%)
 
 .about
     display: flex
@@ -54,12 +51,12 @@ header
     width: 80%
     margin: .8rem auto 0
     .info-box
-        background-color: desaturate($eden, 20%)
+        background-color: desaturate($bg-box, 20%)
         border-radius: 1rem
         margin-right: 1rem
         padding-bottom: 2rem
         width: 33%
-        box-shadow: 0 3px 5px 0 darken($white, 26%)
+        box-shadow: 0 3px 5px 0 lighten($bg-shadow, 40%)
     p
         width: 75%
         color: white
@@ -70,8 +67,8 @@ header
         text-align: center
         background-color: darken($green, 6%)
         padding: .5rem
-        box-shadow: 0 1.5px 5px 0 lighten($black, 10%)
+        box-shadow: 0 1.5px 5px 0 lighten($bg-shadow, 5%)
     .fa
         font-size: 3rem
         color: $white
-        text-shadow: 1px 2px 5px $eden
+        text-shadow: 2px 2px 5px darken($bg-box, 10%)
