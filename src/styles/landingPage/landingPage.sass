@@ -9,25 +9,43 @@ header
         bottom-right-radius: 3%
     box-shadow: 0 3px 7px 0 lighten($bg-shadow, 15%)
     .header-div
-        width: 35%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        align-self: center
         background-color: $white
         opacity: 0.9
-        text-align: center
-        align-self: center
-        padding: 1rem
+        padding: .5rem 1.2rem
         border-radius: 1rem
         box-shadow: 0 4px 8px 0 darken($bg-box, 5%)
+        height: 40%
+        width: 80%
+        +tablet
+            width: 60%
+            h1
+                font-size: 2.5rem
+        +desktop
+            width: 40%
 
 .intro
     display: flex
     justify-content: center
     width: 100%
     .quote
-        width: 30%
+        width: 80%
         text-align: center
         align-self: center
         line-height: 1.2
         margin-bottom: 2rem
+        h2
+            margin: 2rem 0 2rem
+        +tablet
+            h2
+                font-size: 2rem
+        +desktop
+            width: 40%
+
     .get-started-btn
         display: inline-flex
         justify-content: center
@@ -46,21 +64,31 @@ header
 
 .about
     display: flex
-    flex-direction: row
+    flex-direction: column
     align-items: center
-    width: 80%
+    width: 90%
     margin: .8rem auto 0
+    +tablet
+        width: 70%
+    +desktop
+        flex-direction: row
+        width: 85%
     .info-box
         background-color: desaturate($bg-box, 20%)
         border-radius: 1rem
         margin-right: 1rem
         padding-bottom: 2rem
-        width: 33%
+        width: 100%
+        margin: 0 auto 3rem
         box-shadow: 0 3px 5px 0 lighten($bg-shadow, 40%)
+        +desktop
+            width: 30%
+            
     p
-        width: 75%
+        width: 90%
         color: white
         font-size: 1.4rem
+        font-size: 1.2rem
         line-height: 1.3
         margin: 0 auto
     h3
@@ -69,6 +97,8 @@ header
         padding: .5rem
         box-shadow: 0 1.5px 5px 0 lighten($bg-shadow, 5%)
     .fa
-        font-size: 3rem
+        font-size: 2rem
         color: $white
         text-shadow: 2px 2px 5px darken($bg-box, 10%)
+        +tablet
+            font-size: 3rem
