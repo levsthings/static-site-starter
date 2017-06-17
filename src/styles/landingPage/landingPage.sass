@@ -1,13 +1,6 @@
-header
-    display: flex
-    justify-content: center
-    height: 45vh
+.header-wrapper
     background: linear-gradient(45deg, rgba(darken($green, 25%), 0.3), rgba($white, 0.5)),
     url('~/assets/images/header-background.jpg') 
-    border:
-        bottom-left-radius: 3%
-        bottom-right-radius: 3%
-    box-shadow: 0 3px 7px 0 lighten($bg-shadow, 15%)
     .header-div
         display: flex
         flex-direction: column
@@ -49,18 +42,6 @@ header
     .get-started-btn
         display: inline-flex
         justify-content: center
-        color: $white
-        background-color: $btn-accent
-        font:
-          size: 1.5rem
-          weight: 500
-        padding: 1rem
-        border-radius: 5px
-        width: 10rem
-        box-shadow: 0 2px 5px 0 lighten($bg-shadow, 10%)
-        transition: background-color 0.5s ease
-        &:hover
-          background-color: lighten($btn-accent, 7%)
 
 .about
     display: flex
@@ -83,7 +64,7 @@ header
         box-shadow: 0 3px 5px 0 lighten($bg-shadow, 40%)
         +desktop
             width: 30%
-            
+
     p
         width: 90%
         color: white

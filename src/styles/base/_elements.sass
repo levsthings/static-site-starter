@@ -4,20 +4,38 @@ body
   background-color: $bg-body
   width: 100%
 
+::selection
+    color: $white
+    background-color: darken($green, 5%)
+
 a
     text-decoration: none
 
 img
     max-width: 100%
 
-h2
-    font:
-      size: 1.8rem
-      weight: 600
-
 h1
-    color: darken($green, 15%)
+    color: darken($green, 8%)
     margin-bottom: 0
     font:
       size: 1.7rem
       weight: 600
+
+h2
+    font:
+      size: 1.5rem
+      weight: 600
+
+header
+    display: flex
+    justify-content: center
+    height: 45vh
+    border:
+        bottom-left-radius: 3%
+        bottom-right-radius: 3%
+    box-shadow: 0 3px 7px 0 lighten($bg-shadow, 15%)
+
+code
+    background-color: lighten($green, 35%)
+    color: $bg-box
+    margin: .3rem auto
