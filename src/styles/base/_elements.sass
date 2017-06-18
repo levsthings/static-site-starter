@@ -1,41 +1,13 @@
-body
-  font: 100% $font-text
-  color: $font-gray
-  background-color: $bg-body
-  width: 100%
-
-::selection
+.info-btn
     color: $white
-    background-color: darken($green, 5%)
-
-a
-    text-decoration: none
-
-img
-    max-width: 100%
-
-h1
-    color: darken($green, 8%)
-    margin-bottom: 0
+    background-color: $btn-accent
     font:
-      size: 1.7rem
-      weight: 600
-
-h2
-    font:
-      size: 1.5rem
-      weight: 600
-
-header
-    display: flex
-    justify-content: center
-    height: 45vh
-    border:
-        bottom-left-radius: 3%
-        bottom-right-radius: 3%
-    box-shadow: 0 3px 7px 0 lighten($bg-shadow, 15%)
-
-code
-    background-color: lighten($green, 35%)
-    color: $bg-box
-    margin: .3rem auto
+        size: 1.5rem
+        weight: 500
+    padding: 1rem
+    border-radius: 5px
+    width: 10rem
+    box-shadow: -1.5px 1px 5px 0 lighten($bg-shadow, 50%)
+    transition: background-color 0.5s ease
+    &:hover
+        background-color: lighten($btn-accent, 7%)
