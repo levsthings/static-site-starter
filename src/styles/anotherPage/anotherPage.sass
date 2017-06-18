@@ -1,11 +1,11 @@
 .getting-started-header
-    background: linear-gradient(desaturate($bg-box, 15%), darken($green, 10%))
+    background: $bg-box
     .header-info
         display: flex
         flex-direction: column
         justify-content: center
         width: 90%
-        padding: 0 2rem
+        padding: 0 1rem 2rem
         text-shadow: 0px 2px 10px darken($bg-box, 5%)
         h1
             color: $white
@@ -14,44 +14,105 @@
         h4
             color: $bg-body
             line-height: 1.2
-            font-size: 1.3rem
-
-.btn-div
-    display: flex
-    justify-content: space-around
-    align-items: center
-    margin: 1rem auto
-    height: 7rem
-    width: 95%
-    .info-btn
-        text-align: center
-        width: 30%
-        font-size: 1.32rem
-    .home-btn
-        background-color: rgba($white, 0.8)
-        border: 1.5px solid $btn-accent
-        color: $btn-accent
-        transition: .3s ease
-        &:hover
-            background-color: $btn-accent
-            color: $white
+            font-size: 1.1rem
+        .btn-div
+            display: flex
+            justify-content: space-around
+            .info-btn
+                text-align: center
+                align-self: center
+                width: 50%
+                font-size: 1rem
+                padding: 1rem
+                background-color: $green
+                box-shadow: none
+                transition: background-color .3s ease
+                &:hover
+                    background-color: lighten($green, 15%)
+            .home-btn
+                width: 15%
+                background-color: transparent
+                border: 1.5px solid $white
+                transition: background-color .3s ease
+                &:hover
+                    background-color: $green
 
 .read-me
     display: flex
     justify-content: center
-    padding: 1rem 0
-    background-color: darken($white, 1%)
-    box-shadow: 0 2px 9px 2px lighten($bg-shadow, 40%)
+    margin-top: 1.5rem
+    padding: 1rem 0 5rem
+    background-color: $white
+    box-shadow: 0 1.5px 5px 2px lighten($bg-shadow, 80%)
     width: 100%
     .read-me-div
+        display: flex
+        flex-direction: column
         width: 90%
         line-height: 1.2
-        h1, h2, h3
-            margin: .9rem auto
-        h2
-            color: lighten($bg-box, 5%)
+        img
+            width: 30%
+            align-self: center
+            margin-bottom: 1rem
+        code
+            align-self: flex-start
+        .title
+            font-size: 2rem
+            color: $btn-accent
+            align-self: center
+            margin-bottom: 1.5rem
+        .read-me-btn
+            display: flex
+            justify-content: center
+            margin-top: 3rem
+            .info-btn
+                width: 60%
+                text-align: center
+                font-size: 1.3rem
+    h1, h2, h3
+        margin: 0.5rem 0
+    h2
+        color: lighten($bg-box, 5%)
+    h3
+        color: $bg-accent
+    p
+        margin: .5rem 0
+
+.benefits-title-wrapper
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin: 0 auto 2rem
+    padding: 2rem 0
+    background-color: $green
+    box-shadow: 0 1.5px 5px 2px lighten($bg-shadow, 80%)
+    .benefits-title
+        align-self: center
+        width: 95%
+    h1
+        margin-top: 0
+        text-align: center
+        font-size: 1.6rem
+        padding: 0 .5rem
+        color: $white
+        text-shadow: 0px 1px 5px darken($bg-box, 5%)
+
+.features
+    .details
+        display: flex
+        flex-direction: column
+        background-color: transparent
+        box-shadow: none
+        padding: 0
+        img
+            width: 30%
+            align-self: center
         h3
-            color: $bg-accent
+            color: $bg-box
+            font-size: 1.6rem
+            background-color: transparent
+            box-shadow: none
+            padding: 0
+            margin: 0.9rem 0
         p
-            font-size: 1.1rem
-            margin: 0.8rem 0.5rem
+            color: $font-gray
