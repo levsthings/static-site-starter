@@ -1,5 +1,7 @@
 .getting-started-header
     background: $bg-box
+    +tablet
+        height: 35vh
     .header-info
         display: flex
         flex-direction: column
@@ -7,28 +9,41 @@
         width: 90%
         padding: 0 1rem 2rem
         text-shadow: 0px 2px 10px darken($bg-box, 5%)
+        +tablet
+            width: 85%
         h1
             color: $white
             font-size: 2.2rem
             margin-top: 2rem
+            +tablet
+                font-size: 2.5rem
         h4
             color: $bg-body
             line-height: 1.2
             font-size: 1.1rem
+            +tablet
+                font-size: 1.4rem
         .btn-div
             display: flex
             justify-content: space-around
+            +tablet
+                width: 80%
+                margin: 0 auto
             .info-btn
                 text-align: center
                 align-self: center
-                width: 50%
-                font-size: 1rem
-                padding: 1rem
+                width: 55%
+                font-size: 1.1rem
+                padding: 0.9rem 0.7rem
                 background-color: $green
                 box-shadow: none
                 transition: background-color .3s ease
                 &:hover
                     background-color: lighten($green, 15%)
+                +mobile
+                    font-size: 1.3rem
+                +tablet
+                    width: 35%
             .home-btn
                 width: 15%
                 background-color: transparent
@@ -67,6 +82,8 @@
                 width: 60%
                 text-align: center
                 font-size: 1.3rem
+                +tablet
+                    width: 27%
     h1, h2, h3
         margin: 0.5rem 0
     h2
@@ -116,6 +133,10 @@
     margin: 0 auto 2rem
     .btn-div
         margin-top: 1rem
+        .info-btn
+            +tablet
+                font-size: 1.4rem
+                padding: 0.8rem
 
 .about
     display: flex
@@ -133,6 +154,12 @@
             margin-bottom: 1rem
         p
             color: lighten($font-gray, 40%)
+        a
+            &:hover
+                opacity: 0.8
+            +tablet
+                width: 8%
+                margin: 0 auto
 
 footer
     display: flex
@@ -141,6 +168,8 @@ footer
     background-color: $bg-shadow
     padding: 0 3rem
     height: 4rem
+    +tablet
+        padding: 0 15rem
     .fa
         font-size: 1.8rem
         color: desaturate($green, 40%)
