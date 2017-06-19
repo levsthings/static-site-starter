@@ -16,6 +16,10 @@ body
         flex-direction: column
         width: 90%
         line-height: 1.2
+        .title
+            font-size: 2.1rem
+            align-self: flex-start
+            margin: 2.5rem 0 2rem
         code
             align-self: flex-start
             background-color: darken($bg-body, 2%)
@@ -23,33 +27,34 @@ body
             color: $btn-accent
             margin: 0 2px
             border-radius: 2px
-            white-space: nowrap
-        .title
-            font-size: 2rem
-            color: $bg-box
-            align-self: flex-start
-            margin: 3rem 0 2rem
-        .btn-div
+            white-space: wrap
+        a
+            color: darken($green, 10%)
+        .link-div
             display: flex
-            justify-content: center
+            justify-content: space-between
             margin-top: 3rem
-            .info-btn
-                width: 40%
-                text-align: center
-                font-size: 1.3rem
-                +tablet
-                    width: 27%
+            a
+                color: $btn-accent
+                font-size: 1.2rem
+                &:hover
+                    color: lighten($btn-accent, 10%)
+
     h2, h3
-        margin: 0.5rem 0
+        margin: 1rem 0
     h2
         color: lighten($bg-box, 5%)
-        padding-bottom: 0.8rem
-        border-bottom: 1px solid #ddd
     h3
-        color: darken($green, 8%)
+        color: $bg-accent
     p
         margin: .5rem 0
         word-spacing: 0.05em
+    a
+        font-weight: 600
+
+.divider
+        border-bottom: 1px solid #ddd
+        padding-bottom: 0.8rem
 
 footer
     display: flex
