@@ -1,178 +1,68 @@
-.getting-started-header
-    background: $bg-box
-    +tablet
-        height: 35vh
-    .header-info
-        display: flex
-        flex-direction: column
-        justify-content: center
-        width: 90%
-        padding: 0 1rem 2rem
-        text-shadow: 0px 2px 10px darken($bg-box, 5%)
-        +tablet
-            width: 85%
-        h1
-            color: $white
-            font-size: 2.2rem
-            margin-top: 2rem
-            +tablet
-                font-size: 2.5rem
-        h4
-            color: $bg-body
-            line-height: 1.2
-            font-size: 1.1rem
-            +tablet
-                font-size: 1.4rem
-        .btn-div
-            display: flex
-            justify-content: space-around
-            +tablet
-                width: 80%
-                margin: 0 auto
-            .info-btn
-                text-align: center
-                align-self: center
-                width: 55%
-                font-size: 1.1rem
-                padding: 0.9rem 0.7rem
-                background-color: $green
-                box-shadow: none
-                transition: background-color .3s ease
-                &:hover
-                    background-color: lighten($green, 15%)
-                +mobile
-                    font-size: 1.3rem
-                +tablet
-                    width: 35%
-            .home-btn
-                width: 15%
-                background-color: transparent
-                border: 1.5px solid $white
-                transition: background-color .3s ease
-                &:hover
-                    background-color: $green
+body
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+    background-color: lighten($bg-body, 40%)
 
 .read-me
+    flex: 1
     display: flex
     justify-content: center
-    margin-top: 1.5rem
-    padding: 1rem 0 5rem
-    background-color: $white
-    box-shadow: 0 1.5px 5px 2px lighten($bg-shadow, 80%)
+    background-color: lighten($bg-body, 40%)
     width: 100%
+    margin-bottom: 4rem
     .read-me-div
         display: flex
         flex-direction: column
         width: 90%
         line-height: 1.2
-        img
-            margin-bottom: 1rem
         code
             align-self: flex-start
+            background-color: darken($bg-body, 2%)
+            padding: 3px 5px
+            color: $btn-accent
+            margin: 0 2px
+            border-radius: 2px
+            white-space: nowrap
         .title
             font-size: 2rem
-            color: $btn-accent
-            align-self: center
-            margin-bottom: 1.5rem
+            color: $bg-box
+            align-self: flex-start
+            margin: 3rem 0 2rem
         .btn-div
             display: flex
             justify-content: center
             margin-top: 3rem
             .info-btn
-                width: 60%
+                width: 40%
                 text-align: center
                 font-size: 1.3rem
                 +tablet
                     width: 27%
-    h1, h2, h3
+    h2, h3
         margin: 0.5rem 0
     h2
         color: lighten($bg-box, 5%)
+        padding-bottom: 0.8rem
+        border-bottom: 1px solid #ddd
     h3
-        color: $bg-accent
+        color: darken($green, 8%)
     p
         margin: .5rem 0
-
-.benefits
-    h1
-        text-align: center
-        margin: 2rem auto
-        font-size: 2rem
-        color: $bg-box
-    .benefits-wrapper
-        display: flex
-        flex-direction: column
-        justify-content: center
-        margin: 0 auto 1.5rem
-        padding: 2rem 0
-        background-color: $green
-        box-shadow: 0 1.5px 5px 3px lighten($bg-shadow, 80%)
-        .features
-            .details
-                display: flex
-                flex-direction: column
-                background-color: transparent
-                box-shadow: none
-                padding: 0
-                h3
-                    color: $white
-                    font-size: 1.6rem
-                    background-color: transparent
-                    box-shadow: none
-                    padding: 0
-                    margin: 0.9rem 0
-                    text-shadow: 0px 2px 3px darken($bg-box, 5%)
-                p
-                    color: $font-gray
-
-.contact
-    display: flex
-    flex-direction: column
-    align-items: center
-    width: 95%
-    margin: 0 auto 2rem
-    .btn-div
-        margin-top: 1rem
-        .info-btn
-            +tablet
-                font-size: 1.4rem
-                padding: 0.8rem
-
-.about
-    display: flex
-    justify-content: center
-    background-color: darken($bg-accent, 28%)
-    opacity: 0.9
-    box-shadow: 0 -3px 4px 1px lighten($bg-shadow, 80%)
-    div
-        display: flex
-        flex-direction: column
-        width: 90%
-        padding: 1.5rem 0rem
-        h1
-            align-self: center
-            margin-bottom: 1rem
-        p
-            color: lighten($font-gray, 40%)
-        a
-            &:hover
-                opacity: 0.8
-            +tablet
-                width: 8%
-                margin: 0 auto
+        word-spacing: 0.05em
 
 footer
     display: flex
     justify-content: space-around
     align-items: center
-    background-color: $bg-shadow
+    background-color: darken($bg-accent, 15%)
     padding: 0 3rem
     height: 4rem
     +tablet
         padding: 0 15rem
     .fa
         font-size: 1.8rem
-        color: desaturate($green, 40%)
+        color: $green
         transition: color 0.5s ease
         &:hover
             color: $btn-accent
