@@ -14,12 +14,16 @@
         box-shadow: 0 4px 8px 0 darken($bg-box, 5%)
         height: 40%
         width: 80%
+        img
+            width: 100%
         +tablet
             width: 60%
             h1
                 font-size: 2.5rem
         +desktop
             width: 40%
+            img
+                width: 80%
 
 .intro
     display: flex
@@ -38,7 +42,6 @@
                 font-size: 2rem
         +desktop
             width: 40%
-
     .get-started-btn
         display: inline-flex
         justify-content: center

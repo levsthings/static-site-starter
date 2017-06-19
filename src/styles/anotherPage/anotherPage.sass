@@ -51,8 +51,6 @@
         width: 90%
         line-height: 1.2
         img
-            width: 30%
-            align-self: center
             margin-bottom: 1rem
         code
             align-self: flex-start
@@ -61,7 +59,7 @@
             color: $btn-accent
             align-self: center
             margin-bottom: 1.5rem
-        .read-me-btn
+        .btn-div
             display: flex
             justify-content: center
             margin-top: 3rem
@@ -78,41 +76,74 @@
     p
         margin: .5rem 0
 
-.benefits-title-wrapper
-    display: flex
-    flex-direction: column
-    justify-content: center
-    margin: 0 auto 2rem
-    padding: 2rem 0
-    background-color: $green
-    box-shadow: 0 1.5px 5px 2px lighten($bg-shadow, 80%)
-    .benefits-title
-        align-self: center
-        width: 95%
+.benefits
     h1
-        margin-top: 0
         text-align: center
-        font-size: 1.6rem
-        padding: 0 .5rem
-        color: $white
-        text-shadow: 0px 1px 5px darken($bg-box, 5%)
-
-.features
-    .details
+        margin: 2rem auto
+        font-size: 2rem
+        color: $bg-box
+    .benefits-wrapper
         display: flex
         flex-direction: column
-        background-color: transparent
-        box-shadow: none
-        padding: 0
-        img
-            width: 30%
+        justify-content: center
+        margin: 0 auto 1.5rem
+        padding: 2rem 0
+        background-color: $green
+        box-shadow: 0 1.5px 5px 3px lighten($bg-shadow, 80%)
+        .features
+            .details
+                display: flex
+                flex-direction: column
+                background-color: transparent
+                box-shadow: none
+                padding: 0
+                h3
+                    color: $white
+                    font-size: 1.6rem
+                    background-color: transparent
+                    box-shadow: none
+                    padding: 0
+                    margin: 0.9rem 0
+                    text-shadow: 0px 2px 3px darken($bg-box, 5%)
+                p
+                    color: $font-gray
+
+.contact
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 95%
+    margin: 0 auto 2rem
+    .btn-div
+        margin-top: 1rem
+
+.about
+    display: flex
+    justify-content: center
+    background-color: darken($bg-accent, 28%)
+    opacity: 0.9
+    box-shadow: 0 -3px 4px 1px lighten($bg-shadow, 80%)
+    div
+        display: flex
+        flex-direction: column
+        width: 90%
+        padding: 1.5rem 0rem
+        h1
             align-self: center
-        h3
-            color: $bg-box
-            font-size: 1.6rem
-            background-color: transparent
-            box-shadow: none
-            padding: 0
-            margin: 0.9rem 0
+            margin-bottom: 1rem
         p
-            color: $font-gray
+            color: lighten($font-gray, 40%)
+
+footer
+    display: flex
+    justify-content: space-around
+    align-items: center
+    background-color: $bg-shadow
+    padding: 0 3rem
+    height: 4rem
+    .fa
+        font-size: 1.8rem
+        color: desaturate($green, 40%)
+        transition: color 0.5s ease
+        &:hover
+            color: $btn-accent
