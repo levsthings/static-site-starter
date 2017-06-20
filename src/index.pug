@@ -1,11 +1,7 @@
 doctype html
 html(lang='en')
-    head
-        title monoLambda | Static Site Generator
-        meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        link(href='https://fonts.googleapis.com/css?family=Fira+Sans:400,500|Lato', rel='stylesheet')
-        link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    - var indexPage = true // set indexPage variable to true
+    include ./templates/partials/_header.pug
     body
         header.header-wrapper
             .header-div
