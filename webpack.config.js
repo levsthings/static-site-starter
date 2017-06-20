@@ -85,13 +85,12 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, 'src'),
         compress: true,
         hot: true,
         inline: true,
         port: 3000,
-        stats: 'errors-only',
-        open: true
+        stats: 'errors-only'
     },
     plugins: [
         new HtmlWebpackPlugin({
