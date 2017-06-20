@@ -10,7 +10,8 @@ module.exports = {
     entry: {
         app: [
             './src/js/app.js',
-            './src/styles/app.sass'
+            './src/styles/app.sass',
+            './src/index.pug'
         ],
         anotherPage: './src/js/anotherPage.js',
         landingPage: './src/js/landingPage.js'
@@ -22,8 +23,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ejs$/,
-                loader: 'html-loader'
+                test: /\.pug$/,
+                use: [
+                    {
+                        loader: 'html-loader'
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                        options: {
+                            data: {
+                                title: 'Test123'
+                            }
+                        }
+                    }
+                ]
             },
             {
                 test: /\.sass$/,
@@ -103,8 +116,8 @@ module.exports = {
                 let o2 = orders.indexOf(c2.names[0])
                 return o1 - o2
             },
-            template: './src/index.ejs',
-            inject: true
+            filename: 'index.html',
+            template: './src/index.pug'
         }),
         new HtmlWebpackPlugin({
             title: 'Another Page',
@@ -117,7 +130,7 @@ module.exports = {
                 return o1 - o2
             },
             filename: 'another-page/another-page.html',
-            template: './src/templates/another-page.ejs'
+            template: './src/templates/another-page.pug'
         }),
         new ExtractTextPlugin({
             filename: 'css/[name].bundle.css',
