@@ -5,18 +5,20 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-
     devtool: 'cheap-module-source-map',
     entry: {
+        // Define entry points for all resource to get hot reloading.
         app: [
             './src/js/app.js',
             './src/styles/app.sass',
             './src/index.pug'
         ],
+        // Chunked JS files
         anotherPage: './src/js/anotherPage.js',
         landingPage: './src/js/landingPage.js'
     },
     output: {
+        // Output rules
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js'
     },
