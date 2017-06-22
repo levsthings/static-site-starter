@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+    - var indexPage = true // set indexPage variable to true
+    include ./templates/partials/_header.pug
+    body
+        header.header-wrapper
+            .header-div
+                img(src='/assets/images/expanded_logo.png', alt='monoLambda expanded logo')
+                h1 Static Site Starter
+        section.intro
+            .quote
+                h2 Build elegant, static websites with advanced functionality and optimizations.
+                a.get-started-btn(href='./another-page/another-page.html') Get Started
+        section.features
+            .info-box
+                h3
+                    i.fa.fa-book(aria-hidden='true')
+                p
+                    | Pastry cake sugar plum wafer I love. I love lemon drops croissant donut sesame snaps biscuit jelly beans.
+            .info-box
+                h3
+                    i.fa.fa-rocket(aria-hidden='true')
+                p
+                    | Pastry cake sugar plum wafer I love. I love lemon drops croissant donut sesame snaps biscuit jelly beans.
+            .info-box
+                h3
+                    i.fa.fa-coffee(aria-hidden='true')
+                p
+                    | Pastry cake sugar plum wafer I love. I love lemon drops croissant donut sesame snaps biscuit jelly beans.
